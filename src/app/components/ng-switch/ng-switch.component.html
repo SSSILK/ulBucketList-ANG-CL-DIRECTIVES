@@ -3,5 +3,28 @@
   <h2>ngSwitch</h2>
   <p>You can also look into <a target = 'new' href = 'https://angular.io/api/common/NgSwitch'>ngSwitch,</a> which may be useful if you need to implement a site where the view may change
     depending on a user selection, such as in radio buttons. They are the equivalent of a switch statement.</p>
+    <h2>ngSwitch Example</h2>
+
+  <p>Pick an option:</p>
+
+  <label>
+    <input type="radio" name="choice" value="one" [(ngModel)]="selected">
+    Option One
+  </label>
+  <label>
+    <input type="radio" name="choice" value="two" [(ngModel)]="selected">
+    Option Two
+  </label>
+  <label>
+    <input type="radio" name="choice" value="three" [(ngModel)]="selected">
+    Option Three
+  </label>
+
+  <div [ngSwitch]="selected" class="switch-container">
+    <div *ngSwitchCase="'one'">You picked Option One ✅</div>
+    <div *ngSwitchCase="'two'">You picked Option Two 🎉</div>
+    <div *ngSwitchCase="'three'">You picked Option Three 🚀</div>
+    <div *ngSwitchDefault>Please select an option above.</div>
+  </div>
     
 </div>
